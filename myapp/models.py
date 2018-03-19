@@ -1,8 +1,8 @@
-from flask.ext.sqlalchemy import SQLAlchemy
+from . import db
 
 import time
 
-db = SQLAlchemy()
+
 
 class Record(db.Model):
     __tablename__ = 'record'
