@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from .views import record as record_view
+
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
@@ -13,6 +13,8 @@ def creat_app():
 	db.init_app(app)
 	with app.app_contest():
 		db.create_all()
+
+	from .views import record as record_view
 	app.register_blueprint(record_view)
 	return app
 
