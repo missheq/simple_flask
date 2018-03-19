@@ -1,7 +1,7 @@
 from flask_script import Manager
 
-from record.views import record as record_view
-from record import app
+from app.views import record as record_view
+from app import app
 
 app.register_blueprint(record_view)
 manager = Manager(app)
