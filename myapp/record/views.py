@@ -2,7 +2,7 @@ from flask import Blueprint, request, flash, url_for, redirect
 
 from ..models import Record
 
-record = Blueprint('record')
+record = Blueprint('record', __name__)
 
 @record.route('/record/<bid>', methods=['GET', 'POST'])
 def login():

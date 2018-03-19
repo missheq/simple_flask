@@ -8,7 +8,6 @@ from .models import Record
 from .record.views import record as record
 
 
-assets = Environment()
 
 
 
@@ -16,7 +15,7 @@ def create_app(db_uri='any'):
 
     app = Flask(__name__)
     app.config.from_object('myapp.default_config')
-    app.config.from_pyfile(os.path.join(app.instance_path, 'config.py'))
+    #app.config.from_pyfile(os.path.join(app.instance_path, 'config.py'))
     
     if db_uri == 'Test':
         init_engine(app.config['TEST_DATABASE_URI'])
