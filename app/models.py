@@ -1,3 +1,4 @@
+from app import db
 import time
 
 
@@ -6,7 +7,7 @@ class Record(db.Model):
     __tablename__ = 'record'
     
     id = db.Column(db.Integer, primary_key=True)
-    bid = db.Column(db.Integer, nullable=False)
+    bid = db.Column(db.String(100), nullable=False)
     status = db.Column(db.String(100), unique=True)
     last_time = db.Column(db.DateTime)
     

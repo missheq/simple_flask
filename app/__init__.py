@@ -1,4 +1,4 @@
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -8,4 +8,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
 
 app.config.from_object(__name__)
-from record import views
+#from record import views
