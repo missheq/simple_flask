@@ -7,10 +7,10 @@ db = SQLAlchemy()
 class Record(db.Model):
     __tablename__ = 'record'
     
-    id = Column(db.Integer, primary_key=True)
-    bid = Column(db.Integer, nullable=False)
-    status = Column(db.String(100), unique=True)
-    last_time = Column(db.DateTime, default=text("current_timestamp"))
+    id = db.Column(db.Integer, primary_key=True)
+    bid = db.Column(db.Integer, nullable=False)
+    status = db.Column(db.String(100), unique=True)
+    last_time = db.Column(db.DateTime)
     
     def __init__(self, bid, status='unused', last_time=time.time()):
         self.bid = bid
