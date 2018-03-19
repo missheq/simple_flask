@@ -21,7 +21,7 @@ def get_record():
 		result.append({
 			'bid': rd.bid,
 			'status': rd.status,
-			'lasttime': rd.lasttime
+			'lasttime': rd.last_time
 			})
 
 	return jsonify(result)
