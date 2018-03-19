@@ -1,4 +1,4 @@
-from flask import Blueprint, request, url_for, redirect
+from flask import Blueprint, request, url_for, jsonify
 from app import db
 from models import Record
 
@@ -12,3 +12,16 @@ def find(bid):
         db.session.commit()
         print 'find a new record'
     return 'ok'
+
+@record.route('/getall')
+def get_record():
+	result = []
+	rds = Record.query.all()
+	for rd in rds:
+		result.append({
+			'bid': rd.bid,
+			'status': rd.status,
+			'lasttime': rd.lasttime
+			})
+
+	return jsonify(result)
