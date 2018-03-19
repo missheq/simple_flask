@@ -4,7 +4,7 @@ from ..models import Record
 
 record = Blueprint('record', __name__)
 
-@record.route('/record/<bid>', methods=['GET', 'POST'])
+@record.route('/record/<bid>')
 def login():
     rd = Record.query.filter(Record.bid == bid).first()
     if rd is None:

@@ -1,16 +1,16 @@
 from sqlalchemy import Column, Integer, ForeignKey, String, DateTime, text
 from sqlalchemy.ext.hybrid import hybrid_property
 
-from .database import Base
+from . import db
 import time
 
-class Record(Base):
+class Record(db.Model):
     __tablename__ = 'record'
     
-    id = Column(Integer, primary_key=True)
-    bid = Column(Integer, nullable=False)
-    status = Column(String(100), unique=True)
-    last_time = Column(DateTime, default=text("current_timestamp"))
+    id = Column(db.Integer, primary_key=True)
+    bid = Column(db.Integer, nullable=False)
+    status = Column(db.String(100), unique=True)
+    last_time = Column(db.DateTime, default=text("current_timestamp"))
     
     def __init__(self, bid, status='unused', last_time=time.time()):
         self.bid = bid
