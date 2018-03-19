@@ -1,8 +1,6 @@
 from app import db
 import time
 
-
-
 class Record(db.Model):
     __tablename__ = 'record'
     
