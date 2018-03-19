@@ -12,7 +12,7 @@ class Record(db.Model):
     def __init__(self, bid, status='unused'):
         self.bid = bid
         self.status = status
-        self.last_time = last_time
+        #self.last_time = last_time
         
     def get_id(self):
         return unicode(self.id)
