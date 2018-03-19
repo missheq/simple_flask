@@ -7,9 +7,9 @@ class Record(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     bid = db.Column(db.String(100), nullable=False)
     status = db.Column(db.String(100), unique=False)
-    last_time = db.Column(db.DateTime)
+    #last_time = db.Column(db.DateTime)
     
-    def __init__(self, bid, status='unused', last_time=time.time()):
+    def __init__(self, bid, status='unused'):
         self.bid = bid
         self.status = status
         self.last_time = last_time
